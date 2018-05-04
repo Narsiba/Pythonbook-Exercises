@@ -1,3 +1,4 @@
+
 #Excercises
 def find_vowels():
     word=input("Enter a word: ")
@@ -19,7 +20,7 @@ def shared_chars(word1, word2):
 def rmv_non_letters(string):
     new_string=""
     for char in string:
-        if char >="a" and char <="z":
+        if char >="A" and char <="z":
             new_string+=char
         else:
             new_string+=" "
@@ -59,7 +60,7 @@ def text_in_brackets(text):
         start=second
 
 #Exercise 10.3
-i=ord("A")
+"""i=ord("A")
 j=ord("A")+13
 while i <= ord("Z"):
     print(chr(i), end="")
@@ -69,4 +70,44 @@ for j in range(ord("A"), ord("Z")+1):
     if j+13 > ord("Z"):
         print(chr(j-13), end="")
     else:
-        print(chr(j+13), end="")
+        print(chr(j+13), end="")"""
+
+#Exercise 10.4
+#Find all occurences of a specific word
+def find_word(text, word):
+    counter=0
+    text=rmv_non_letters(text).lower().split()
+    for i in text:
+        if i==word.lower():
+            counter+=1
+    return counter
+
+#Exercise 10.5
+#Takes a string and orders the characters according to their ASCII code.
+def order_string(string):
+    new_string=""
+    index=0
+    for letter1 in string:
+        index+=1
+        for letter2 in string:
+            if letter2<letter1:
+                print(letter1, letter2)
+                break
+        else:
+            new_string+=letter1
+            print("Else", new_string)
+
+    return new_string
+
+print(order_string("Hello world!"))
+
+#Exercise 10.6
+#Autocorrect Functions
+def autocorrect(text):
+    text= text.split()
+    for word in text:
+        if word[0] >= "A" and word[0] <="Z":
+            if word[1]>="A" and word[1]<="Z":
+                if word[3] >="a" and word[3]<="z":
+                    word=word[0]+word[1].lower()+word[2:]
+        
