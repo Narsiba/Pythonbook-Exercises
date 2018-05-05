@@ -48,7 +48,6 @@ count_shots=0
 board=[[ "-", "-", "-", "-" ], ["-", "-", "-", "-"], ["-", "-", "-", "-"]]
 
 place_ships(board)
-print(board)
 while True:
     row, col, count_shots = getRowCol(count_shots)
     hit_or_miss(row, col)
