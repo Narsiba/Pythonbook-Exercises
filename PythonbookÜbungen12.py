@@ -72,7 +72,7 @@ def count_letters(text):
         if letter >= "a" and letter <= "z":
             letters[ord(letter)-ord("a")][1]+=1
     letters.sort(key=number_letters)
-    return letters   
+    return letters
 
 #Exercise 12.5
 

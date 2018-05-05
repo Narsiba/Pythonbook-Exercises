@@ -42,10 +42,10 @@ def winner(board):
         return
 
 def draw(board):
-    if "-" not in board:
-        return 
-    else:
-        return
+        if "-" not in board[0] and "-" not in board[1] and "-" not in board[2]:
+            return True
+        else:
+            return
 
 player="X"
 board=[[ "-", "-", "-" ], ["-", "-", "-"], ["-", "-", "-"]]
